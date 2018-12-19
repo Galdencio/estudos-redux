@@ -40,6 +40,8 @@ function* asyncAddTodo(action) {
 
 export default function* root() {
     yield [
+        // takeEvery significa que será realizada para todas as chamadas
+        // takeLatest significa que realizará apenas a última chamada e descartará as anteriores
         takeEvery('ASYNC_ADD_TODO', asyncAddTodo),
     ];
 
